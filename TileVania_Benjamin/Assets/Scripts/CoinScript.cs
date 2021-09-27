@@ -9,10 +9,16 @@ public class CoinScript : MonoBehaviour
     
     private GameObject SFXListener;
 
+    private bool coinUsable = true;
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        SFXListener = GameObject.Find("SFXListener");
-        AudioSource.PlayClipAtPoint(pickUpSFX, SFXListener.transform.position);
-        Destroy(this.gameObject);
+        if (coinUsable)
+        {
+            coinUsable = false;
+            SFXListener = GameObject.Find("SFXListener");
+            AudioSource.PlayClipAtPoint(pickUpSFX, SFXListener.transform.position);
+            Destroy(this.gameObject);
+        }
     }
 }

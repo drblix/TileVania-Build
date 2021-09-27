@@ -39,7 +39,14 @@ public class GameSession : MonoBehaviour
         scoreText.text = "x " + coinAmount.ToString();
     }
 
-    
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().buildIndex == 7)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
     public void AddToCoinAmount(int coinAmountToAdd)
     {
         coinAmount += coinAmountToAdd;

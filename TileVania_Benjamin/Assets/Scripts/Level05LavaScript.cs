@@ -25,7 +25,6 @@ public class Level05LavaScript : MonoBehaviour
     
     void FixedUpdate()
     {
-        print(transform.position.y);
         if (maxRaisePos <= transform.position.y)
         {
             lavaRaising = false;

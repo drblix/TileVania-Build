@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class GameSession : MonoBehaviour
 {
+
     [SerializeField]
     private int playerLives = 3;
     
@@ -54,6 +55,11 @@ public class GameSession : MonoBehaviour
         if (coinAmount <= 1000)
         {
             scoreText.text = "x " + coinAmount.ToString();
+            if (coinAmount < 0)
+            {
+                coinAmount = 0;
+                scoreText.text = "x " + coinAmount.ToString();
+            }
         }
         else
         {
@@ -79,12 +85,20 @@ public class GameSession : MonoBehaviour
     {
         if (playerLives > 1)
         {
-            TakeLife();
+            AddToCoinAmount(-10);
+            StartCoroutine(DeathCooldown());
         }
         else
         {
             ResetGameSession();
         }
+    }
+
+    private IEnumerator DeathCooldown()
+    {
+        yield return new WaitForSecondsRealtime(2f);
+
+        TakeLife();
     }
 
     private void TakeLife()

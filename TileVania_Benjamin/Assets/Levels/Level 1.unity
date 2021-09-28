@@ -13108,11 +13108,11 @@ CompositeCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_GeometryType: 0
+  m_GeometryType: 1
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
@@ -25377,6 +25377,14 @@ PrefabInstance:
     - target: {fileID: 3195711057389297701, guid: 317efcc9aa8dd9842b614964f24f3921, type: 3}
       propertyPath: m_Color.r
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669933513007873478, guid: 317efcc9aa8dd9842b614964f24f3921, type: 3}
+      propertyPath: EmissionModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7669933513007873478, guid: 317efcc9aa8dd9842b614964f24f3921, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 6.09
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 1236533814870594482, guid: 317efcc9aa8dd9842b614964f24f3921, type: 3}

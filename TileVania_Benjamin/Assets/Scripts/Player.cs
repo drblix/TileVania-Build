@@ -59,7 +59,6 @@ public class Player : MonoBehaviour
         }
         catch (System.NullReferenceException)
         {
-            print("shopkeeper disabled");
             shopScript = null;
             shopKeeperObject = null;
         }

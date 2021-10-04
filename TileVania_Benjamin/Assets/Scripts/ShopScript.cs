@@ -48,7 +48,7 @@ public class ShopScript : MonoBehaviour
         }
         catch (System.NullReferenceException)
         {
-            print("GameSession not located");
+            Debug.LogError("GameSession not located");
             gameSessionObject = null;
             gameSessionScript = null;
         }
@@ -73,10 +73,8 @@ public class ShopScript : MonoBehaviour
 
     public void BuyLife()
     {
-        print(playerCoinAmount);
         if (playerCoinAmount >= lifePrice)
         {
-            print("life bought");
             gameSessionScript.IncreaseLives(1, true);
             gameSessionScript.AddToCoinAmount(-lifePrice);
             AudioSource.PlayClipAtPoint(purchaseEffectClip, SFXListener.transform.position);

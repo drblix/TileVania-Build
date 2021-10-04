@@ -15,10 +15,10 @@ public class GameSession : MonoBehaviour
     [SerializeField]
     private Sprite[] liveImages;
 
-    [SerializeField]
     private Text scoreText;
-    [SerializeField]
     private Image livesIconDisplay;
+
+    private int _endingSceneIndex;
 
     private void Awake()
     {
@@ -35,14 +35,16 @@ public class GameSession : MonoBehaviour
 
     private void Start()
     {
+        scoreText = transform.Find("Canvas").Find("ScoreText").GetComponent<Text>();
+        livesIconDisplay = transform.Find("Canvas").Find("LivesIcon").GetComponent<Image>();
         livesIconDisplay.sprite = liveImages[3];
         coinAmount = 0;
-        scoreText.text = "x " + coinAmount.ToString();
+        _endingSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
     }
 
     private void Update()
     {
-        if (SceneManager.GetActiveScene().buildIndex == 7)
+        if (SceneManager.GetActiveScene().buildIndex == _endingSceneIndex)
         {
             Destroy(this.gameObject);
         }

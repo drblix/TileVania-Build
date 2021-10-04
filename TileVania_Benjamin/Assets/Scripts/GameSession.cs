@@ -38,6 +38,7 @@ public class GameSession : MonoBehaviour
         scoreText = transform.Find("Canvas").Find("ScoreText").GetComponent<Text>();
         livesIconDisplay = transform.Find("Canvas").Find("LivesIcon").GetComponent<Image>();
         livesIconDisplay.sprite = liveImages[3];
+        scoreText.text = "x 0";
         coinAmount = 0;
         _endingSceneIndex = SceneManager.sceneCountInBuildSettings - 1;
     }
